@@ -1,6 +1,6 @@
  # Sample contents of Dockerfile
  # Stage 1
- FROM microsoft/aspnetcore-build:1.0-2.0 AS builder
+ FROM microsoft/aspnetcore-build AS builder
  WORKDIR /src
 
  # caches restore result by copying csproj file separately
