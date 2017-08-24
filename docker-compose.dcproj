@@ -6,7 +6,7 @@
     <ProjectGuid>8ab20dd3-a0ee-48f0-a002-fdf7e5ab9b75</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>http://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>remoterightclickserver</DockerServiceName>
+    <DockerServiceName>remote-right-click-server</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.ci.build.yml" />

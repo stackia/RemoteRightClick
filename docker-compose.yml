@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  remoterightclickserver:
-    image: remoterightclickserver
+  remote-right-click-server:
+    image: remote-right-click-server
     build:
       context: ./RemoteRightClickServer
       dockerfile: Dockerfile
