@@ -1,0 +1,24 @@
+﻿<Window x:Class="RemoteRightClickClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        Title="远程右键" Height="148" Width="148" ResizeMode="NoResize" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ToggleButton x:Name="ModeToggleButton" Style="{DynamicResource MaterialDesignActionToggleButton}" ToolTip="切换 Medic / Soldier 模式" Width="64" Height="64" Checked="ModeToggleButton_Checked" Unchecked="ModeToggleButton_Unchecked">
+            <ToggleButton.Content>
+                <materialDesign:PackIcon Kind="Ambulance" Width="40" Height="40" />
+            </ToggleButton.Content>
+            <materialDesign:ToggleButtonAssist.OnContent>
+                <materialDesign:PackIcon Kind="Rocket" Width="40" Height="40" />
+            </materialDesign:ToggleButtonAssist.OnContent>
+        </ToggleButton>
+    </Grid>
+</Window>
