@@ -10,8 +10,9 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        Title="远程右键" Height="148" Width="148" ResizeMode="NoResize" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="远程右键" Height="188.161" Width="265.165" ResizeMode="CanMinimize" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="I am ..." TextAlignment="Center" FontSize="22" Margin="0,0,0,19"></TextBlock>
         <ToggleButton x:Name="ModeToggleButton" Style="{DynamicResource MaterialDesignActionToggleButton}" ToolTip="切换 Medic / Soldier 模式" Width="64" Height="64" Checked="ModeToggleButton_Checked" Unchecked="ModeToggleButton_Unchecked">
             <ToggleButton.Content>
                 <materialDesign:PackIcon Kind="Ambulance" Width="40" Height="40" />
@@ -20,5 +21,5 @@
                 <materialDesign:PackIcon Kind="Rocket" Width="40" Height="40" />
             </materialDesign:ToggleButtonAssist.OnContent>
         </ToggleButton>
-    </Grid>
+    </StackPanel>
 </Window>

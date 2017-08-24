@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Net.WebSockets;
 using System.Text;
@@ -26,7 +25,7 @@ namespace RemoteRightClickClient
             InitializeComponent();
             Task.Run(async () =>
             {
-                await ClientWebSocket.ConnectAsync(new Uri("ws://localhost:32768/ws"), ClientWebSocketCts.Token);
+                await ClientWebSocket.ConnectAsync(new Uri("ws://remote-right-click.steamcn.com/ws"), ClientWebSocketCts.Token);
                 while (!ClientWebSocketCts.IsCancellationRequested)
                 {
                     var response = await ReceiveStringAsync(ClientWebSocket, ClientWebSocketCts.Token);
@@ -43,7 +42,7 @@ namespace RemoteRightClickClient
                     {
                         if (response == "RightClick" && (!ModeToggleButton.IsChecked ?? false))
                         {
-                            MouseSimulator.ClickLeftMouseButton();
+                            MouseSimulator.ClickRightMouseButton();
                         }
                     });
                 }
