@@ -61,7 +61,7 @@ namespace RemoteRightClickClient
 
         private void GlobalHookMouseDown(object sender, MouseEventArgs mouseEventArgs)
         {
-            if (mouseEventArgs.Button != MouseButtons.Right) return;
+            if (mouseEventArgs.Button != MouseButtons.XButton2) return;
             ClientWebSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes("RightClick")),
                 WebSocketMessageType.Text, true, CancellationToken.None);
         }
