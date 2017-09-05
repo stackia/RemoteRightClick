@@ -52,11 +52,20 @@ namespace RemoteRightClickClient
         private void ModeToggleButton_Checked(object sender, RoutedEventArgs e)
         {
             GlobalHook.MouseDown += GlobalHookMouseDown;
+            GlobalHook.KeyDown += GlobalHookKeyDown;
         }
         
         private void ModeToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
             GlobalHook.MouseDown -= GlobalHookMouseDown;
+            GlobalHook.KeyDown -= GlobalHookKeyDown;
+        }
+
+        private void GlobalHookKeyDown(object sender, KeyEventArgs keyEventArgs)
+        {
+            if (keyEventArgs.KeyCode != Keys.LMenu) return;
+            ClientWebSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes("RightClick")),
+                WebSocketMessageType.Text, true, CancellationToken.None);
         }
 
         private void GlobalHookMouseDown(object sender, MouseEventArgs mouseEventArgs)
